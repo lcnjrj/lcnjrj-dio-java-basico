@@ -1,0 +1,45 @@
+@startuml
+interface ReprodutorMusical {
+    +void tocar()
+    +void pausar()
+    +void selecionarMusica(String musica)
+    +Navegue por capas de albuns facilmente
+    +Widescreen video
+    +Built-in speaker
+}
+
+interface AparelhoTelefonico {
+    +void ligar(String numero)
+    +void atender()
+    +void iniciarCorreioVoz()
+    +Visual voicemail
+    +Quad-band GSM + EDGE
+    +WIFI and BlueThooth 2.0
+}
+
+interface NavegadorInternet {
+    +void exibirPagina(String url)
+    +void adicionarNovaAba()
+    +void atualizarPagina()
+    +Rich html email
+    +Safari web browser
+    +Google Maps
+    +IMAP + POP3 Mail 
+    +Widges
+    +Free yahoo
+}
+
+class iPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
+    +void tocar()
+    +void pausar()
+    +void selecionarMusica(String musica)
+    +void ligar(String numero)
+    +void atender()
+    +void iniciarCorreioVoz()
+    +void exibirPagina(String url)
+    +void adicionarNovaAba()
+    +void atualizarPagina()
+    +Transição do player de música para telefone
+}
+@enduml
+

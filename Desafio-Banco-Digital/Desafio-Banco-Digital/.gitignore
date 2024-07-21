@@ -1,0 +1,14 @@
+###U m arquivo `.gitignore` para evitar a inclusão de arquivos desnecessários no repositório Git:
+
+###```gitignore
+# Diretórios de saída
+/bin
+/target
+
+# Arquivos de configuração do IDE
+/.classpath
+/.project
+
+# Arquivos temporários
+*.log
+*.tmp

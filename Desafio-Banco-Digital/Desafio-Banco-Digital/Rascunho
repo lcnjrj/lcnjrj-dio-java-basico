@@ -1,0 +1,84 @@
+Para executar um projeto Java 22 no VSCode no LXQt sem o Maven, você pode seguir estes passos:
+
+Instalar o JDK 22:
+
+Certifique-se de que o JDK 22 está instalado no seu sistema. Você pode verificar isso com o comando:
+bash
+Copiar código
+java -version
+Se não estiver instalado, baixe o JDK 22 do site oficial da Oracle ou use um gerenciador de pacotes, como o apt para Debian/Ubuntu:
+bash
+Copiar código
+sudo apt update
+sudo apt install openjdk-22-jdk
+Configurar o VSCode:
+
+Abra o VSCode e instale a extensão Java Extension Pack se ainda não tiver. Isso pode ser feito através do marketplace do VSCode.
+A extensão inclui o Language Support for Java(TM) by Red Hat, Debugger for Java, Java Test Runner, e outras ferramentas úteis.
+Configurar o Projeto:
+
+Certifique-se de que seu projeto Java está organizado com a estrutura de diretórios correta:
+
+/src
+├── /main
+│   └── /java
+│       └── seu_pacote
+│           ├── Main.java
+│           ├── Cliente.java
+│           ├── Conta.java
+│           ├── ContaCorrente.java
+│           └── ContaPoupanca.java
+└── /test
+    └── /java
+        └── seu_pacote
+            └── Test.java
+
+Configurar o tasks.json no VSCode:
+
+No VSCode, crie ou edite o arquivo .vscode/tasks.json para adicionar tarefas para compilar e executar seu código. Adicione as seguintes tarefas:
+json
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile Java",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "-d",
+        "bin",
+        "src/main/java/**/*.java"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$javac"]
+    },
+    {
+      "label": "Run Java",
+      "type": "shell",
+      "command": "java",
+      "args": [
+        "-cp",
+        "bin",
+        "seu_pacote.Main"
+      ],
+      "dependsOn": "Compile Java",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
+Substitua seu_pacote pelo nome do pacote que você está usando.
+
+Executar o Projeto:
+
+No VSCode, abra o terminal integrado (Ctrl + ).
+Entre na pasta onde estão os arquivos *.java
+Rode o comando javac em todos os arquivos de uma vez para não dar erro
+Clique em Run para testar o código.

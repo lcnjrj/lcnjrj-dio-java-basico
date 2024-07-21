@@ -1,0 +1,28 @@
+Para testar a classe iPhone, você pode adicionar um método main à classe, que 
+criará uma instância da classe iPhone e chamará alguns métodos para verificar 
+seu funcionamento:
+
+public class iPhone implements ReprodutorMusical, AparelhoTelefonico,
+ NavegadorInternet { }
+
+
+
+ Compilar todos juntos:
+
+ javac ReprodutorMusical.java AparelhoTelefonico.java NavegadorInternet.java iPhone.java
+
+ Execute a classe iPhone:
+
+ java iPhone
+
+
+ ???  Se o objetivo for apenas implementar e testar as interfaces e a classe iPhone sem um método main,
+  você pode criar uma classe de teste separada com um método main para instanciar e utilizar a 
+  classe iPhone.
+
+  Outros:
+  https://www.youtube.com/watch?v=WSC1K_rDf2w
+
+  https://www.tabnews.com.br/jsfelipearaujo/desenhando-fluxos-de-uma-maneira-programatica-com-o-plantuml
+
+  https://help.miro.com/hc/pt-br/articles/7004940386578-Diagramas-de-PlantUML-para-a-Miro#:~:text=Instale%20o%20aplicativo%20da%20Miro,autorizar%20para%20concluir%20a%20instala%C3%A7%C3%A3o.
