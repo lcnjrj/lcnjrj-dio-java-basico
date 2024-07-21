@@ -16,11 +16,7 @@ javac Main.java Banco.java Cliente.java Conta.java ContaCorrente.java ContaPoupa
 
 ## Estrutura do Projeto
 
-- **src/**: Código-fonte do projeto.
-  - `Main.java`: Classe principal para execução do projeto.
-  - `Banco.java`: Classe que gerencia o banco e suas contas.
-  - `Cliente.java`: Classe que representa um cliente do banco.
-  - `Conta.java`: Classe abstrata para contas bancárias.
-  - `ContaCorrente.java`: Implementação da conta corrente.
-  - `ContaPoupanca.java`: Implementação da conta poupança.
 
+javac Main.java Banco.java Cliente.java Conta.java ContaCorrente.java ContaPoupanca.java IConta.java 
+
+//Para não ter erro, em nome do cliente, inserir apenas nome, sem sobrenome.
