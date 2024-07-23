@@ -1,0 +1,94 @@
+//package br.com.dio.desafio.dominio;
+
+import java.time.LocalDate;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Criação de instâncias de Curso
+        Curso curso1 = new Curso();
+        curso1.setTitulo("Java Básico");
+        curso1.setDescricao("Introdução ao Java");
+        curso1.setCargaHoraria(10); // Carga horária do curso em horas
+        
+        Curso curso2 = new Curso();
+        curso2.setTitulo("Java Avançado");
+        curso2.setDescricao("Aprofundamento em Java");
+        curso2.setCargaHoraria(20); // Carga horária do curso em horas
+
+        // Criação de instâncias de Mentoria
+        Mentoria mentoria1 = new Mentoria("Mentoria Java", "Mentoria sobre Java com especialista", "Joao", LocalDate.now());
+        
+        // Criação de instância de Bootcamp
+        Bootcamp bootcamp = new Bootcamp("Bootcamp Java Developer");
+        bootcamp.setDescricao("Um bootcamp intensivo para se tornar um desenvolvedor Java.");
+        
+        // Adiciona cursos e mentorias ao bootcamp
+        bootcamp.adicionarCurso(curso1);
+        bootcamp.adicionarCurso(curso2);
+        bootcamp.adicionarMentoria(mentoria1);
+        
+        // Criação do desenvolvedor
+        Dev dev = new Dev();
+        dev.setNome("Carlos");
+        
+        // Criação de instância de Dev
+        // Dev dev1 = new Dev();
+       // dev1.setNome("Carlos");
+        
+        // Inscrição do Dev no bootcamp
+        // dev1.inscreverBootcamp(bootcamp);
+        
+         // Inscrição do desenvolvedor no bootcamp
+        dev.inscreverBootcamp(bootcamp);
+
+        // Exibe detalhes do bootcamp
+        // bootcamp.mostrarDetalhes();
+        
+         // Exibindo detalhes do Bootcamp
+        System.out.println("Bootcamp: " + bootcamp.getNome());
+        System.out.println("Descrição: " + bootcamp.getDescricao());
+        System.out.println("Data Inicial: " + bootcamp.getDataInicial());
+        System.out.println("Data Final: " + bootcamp.getDataFinal());
+        System.out.println("Cursos:");
+        for (Curso curso : bootcamp.getCursos()) {
+            System.out.println("- " + curso.getTitulo() + ": " + curso.getDescricao());
+        }
+        System.out.println("Mentorias:");
+        for (Mentoria mentoria : bootcamp.getMentorias()) {
+            System.out.println("- " + mentoria.getTitulo() + ": " + mentoria.getDescricao() + " com " + mentoria.getMentor());
+        }
+
+       
+        // Exibe detalhes do Dev
+       // System.out.println("\nDetalhes do Dev:");
+       // System.out.println("Nome: " + dev1.getNome());
+       // System.out.println("Conteúdos Inscritos: " + dev1.getConteudosInscritos());
+       // System.out.println("Conteúdos Concluídos: " + dev1.getConteudosConcluidos());
+
+ // Exibindo detalhes do Dev
+        System.out.println("\nDetalhes do Dev:");
+        System.out.println("Nome: " + dev.getNome());
+        System.out.println("Conteúdos Inscritos: " + dev.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos: " + dev.getConteudosConcluidos());
+
+        // Progredir no bootcamp
+       // dev1.progredir(); // Progride no primeiro conteúdo inscrito (curso1)
+        
+          // Progredindo o desenvolvedor
+        dev.progredir();
+
+        // Exibe detalhes após progresso
+       // System.out.println("\nApós progresso:");
+       // System.out.println("Conteúdos Inscritos: " + dev1.getConteudosInscritos());
+       // System.out.println("Conteúdos Concluídos: " + dev1.getConteudosConcluidos());
+       // System.out.println("Total XP: " + dev1.calcularTotalXp());
+       
+       // Exibindo detalhes após progresso
+        System.out.println("\nApós progresso:");
+        System.out.println("Conteúdos Inscritos: " + dev.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos: " + dev.getConteudosConcluidos());
+        System.out.println("Total XP: " + dev.calcularTotalXp());
+       
+    }
+}
