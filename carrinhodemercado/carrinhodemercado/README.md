@@ -1,18 +1,17 @@
-## Getting Started
+Projeto em Java que simula um carrinho de mercado em movimento, utilizando os padrões de projeto Singleton, Strategy e Facade.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Carrinho de mercado indo para frente, parando, virando a esquerda, e parando; quando ele chega no ponto final aparece um texto "fila única máximo 15 itens " 
+Feito com vscode, linux LXQT.
 
-## Folder Structure
+Singleton: Usado para gerenciar o estado do carrinho de mercado (por exemplo, a posição do carrinho).
+Strategy: Usado para definir diferentes comportamentos de movimento do carrinho (ir para frente, parar, virar à esquerda).
+Facade: Usado para simplificar a interação com o carrinho de mercado e seus comportamentos.
 
-The workspace contains two folders by default, where:
+Singleton (CartManager): Garante que apenas uma instância do gerenciamento do carrinho existe e mantém o estado do carrinho.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Strategy (CartStrategy, MoveForwardStrategy, TurnLeftStrategy, StopStrategy): Define comportamentos específicos do carrinho e permite que eles sejam alterados dinamicamente.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Facade (CartFacade): Simplifica a interface para o carrinho, agrupando comportamentos e facilitando o uso.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Criado a partir do fork: https://github.com/digitalinnovationone/lab-padroes-projeto-java 
