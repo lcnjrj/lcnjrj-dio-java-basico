@@ -1,4 +1,4 @@
-
+ API REST de uma "to-do list" simplificada usando Spring Boot 3, Java 22 e Railway no VSCode em Linux LXQt
 
 Sistema:
 lxqt-session 1.3.0

@@ -1,7 +1,7 @@
-
 Para Instalar o Spring Boot
 Ver a Instalação do Java JDK
-$ java -version
+
+java -version
 java version "22.0.2" 2024-07-16
 Java(TM) SE Runtime Environment (build 22.0.2+9-70)
 Java HotSpot(TM) 64-Bit Server VM (build 22.0.2+9-70, mixed mode, sharing)
@@ -14,7 +14,7 @@ sudo apt install maven
 
 Ver a instalação do Maven 
 mvn -version
-$ mvn -version
+
 Apache Maven 3.8.7
 Maven home: /usr/share/maven
 Java version: 22.0.2, vendor: Oracle Corporation, runtime: /usr/lib/jvm/jdk-22.0.2-oracle-x64
@@ -75,7 +75,9 @@ Para ver a instalação do Spring Boot
 spring --version
 Spring CLI v3.3.1
 
-
+echo "export JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64/ 
+" >> ~/.bashrc
+source ~/.bashrc
 
 
 

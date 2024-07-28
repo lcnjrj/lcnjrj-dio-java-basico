@@ -1,0 +1,173 @@
+Para criar uma API REST simplificada de "todo list" usando Spring Boot 3 e Java 17, e implementá-la com Railway, siga os passos abaixo:
+
+### 1. Configuração do Projeto
+
+1. **Criar o Projeto Spring Boot:**
+   - Use [Spring Initializr](https://start.spring.io/) para gerar o esqueleto do projeto:
+     - **Project:** Maven Project
+     - **Language:** Java
+     - **Spring Boot:** 3.x.x
+     - **Packaging:** Jar
+     - **Java:** 17
+     - **Dependencies:** Spring Web, Spring Data JPA, H2 Database
+
+2. **Baixar e Descompactar o Projeto:**
+   - Baixe o arquivo ZIP gerado e descompacte-o.
+
+3. **Importar para o VSCode:**
+   - Abra o VSCode e importe o projeto Maven descompactado.
+
+### 2. Estrutura do Projeto
+
+- **src/main/java/com/example/todolist/ToDoApplication.java** - Classe principal.
+- **src/main/java/com/example/todolist/model/ToDo.java** - Entidade.
+- **src/main/java/com/example/todolist/repository/ToDoRepository.java** - Repositório.
+- **src/main/java/com/example/todolist/controller/ToDoController.java** - Controlador.
+
+### 3. Código do Projeto
+
+1. **Classe Principal: `ToDoApplication.java`**
+
+   ```java
+   package com.example.todolist;
+
+   import org.springframework.boot.SpringApplication;
+   import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+   @SpringBootApplication
+   public class ToDoApplication {
+       public static void main(String[] args) {
+           SpringApplication.run(ToDoApplication.class, args);
+       }
+   }
+   ```
+
+2. **Entidade: `ToDo.java`**
+
+   ```java
+   package com.example.todolist.model;
+
+   import javax.persistence.Entity;
+   import javax.persistence.GeneratedValue;
+   import javax.persistence.GenerationType;
+   import javax.persistence.Id;
+
+   @Entity
+   public class ToDo {
+       @Id
+       @GeneratedValue(strategy = GenerationType.IDENTITY)
+       private Long id;
+       private String task;
+       private boolean completed;
+
+       // Getters and Setters
+       public Long getId() {
+           return id;
+       }
+
+       public void setId(Long id) {
+           this.id = id;
+       }
+
+       public String getTask() {
+           return task;
+       }
+
+       public void setTask(String task) {
+           this.task = task;
+       }
+
+       public boolean isCompleted() {
+           return completed;
+       }
+
+       public void setCompleted(boolean completed) {
+           this.completed = completed;
+       }
+   }
+   ```
+
+3. **Repositório: `ToDoRepository.java`**
+
+   ```java
+   package com.example.todolist.repository;
+
+   import com.example.todolist.model.ToDo;
+   import org.springframework.data.jpa.repository.JpaRepository;
+
+   public interface ToDoRepository extends JpaRepository<ToDo, Long> {
+   }
+   ```
+
+4. **Controlador: `ToDoController.java`**
+
+   ```java
+   package com.example.todolist.controller;
+
+   import com.example.todolist.model.ToDo;
+   import com.example.todolist.repository.ToDoRepository;
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.web.bind.annotation.*;
+
+   import java.util.List;
+
+   @RestController
+   @RequestMapping("/todos")
+   public class ToDoController {
+       @Autowired
+       private ToDoRepository toDoRepository;
+
+       @GetMapping
+       public List<ToDo> getAllTodos() {
+           return toDoRepository.findAll();
+       }
+
+       @PostMapping
+       public ToDo createTodo(@RequestBody ToDo toDo) {
+           return toDoRepository.save(toDo);
+       }
+
+       @GetMapping("/{id}")
+       public ToDo getTodoById(@PathVariable Long id) {
+           return toDoRepository.findById(id).orElseThrow(() -> new RuntimeException("ToDo not found"));
+       }
+
+       @PutMapping("/{id}")
+       public ToDo updateTodo(@PathVariable Long id, @RequestBody ToDo toDo) {
+           ToDo existingToDo = toDoRepository.findById(id).orElseThrow(() -> new RuntimeException("ToDo not found"));
+           existingToDo.setTask(toDo.getTask());
+           existingToDo.setCompleted(toDo.isCompleted());
+           return toDoRepository.save(existingToDo);
+       }
+
+       @DeleteMapping("/{id}")
+       public void deleteTodo(@PathVariable Long id) {
+           toDoRepository.deleteById(id);
+       }
+   }
+   ```
+
+### 4. Executar o Projeto Localmente
+
+1. **Compilar e Executar:**
+   - No terminal, navegue até o diretório do projeto e execute:
+     ```sh
+     ./mvnw spring-boot:run
+     ```
+   - A API estará disponível em `http://localhost:8080/todos`.
+
+### 5. Deploy no Railway
+
+1. **Criar uma Conta no Railway:**
+   - Acesse [Railway](https://railway.app/) e crie uma conta, se ainda não tiver.
+
+2. **Criar um Novo Projeto:**
+   - Na dashboard do Railway, crie um novo projeto e escolha a opção para conectar com um repositório Git.
+
+3. **Configurar o Projeto:**
+   - Configure o Railway para usar o Maven e defina as variáveis de ambiente necessárias (se houver).
+
+4. **Deploy:**
+   - Conecte seu repositório Git ao Railway e inicie o deploy. Railway irá construir e hospedar sua aplicação Spring Boot automaticamente.
+
+Isso deve cobrir a criação e o deploy de uma API REST simples com Spring Boot e Railway. Se precisar de mais detalhes ou tiver dúvidas, é só perguntar!
