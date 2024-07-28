@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Criar um modelo para o domínio de um Bootcamp usando os princípios da Programação Orientada a Objetos (POO) em Java. Este modelo incluirá as classes Bootcamp, Cursso, Mentoria, Dev, Conteudo, e Main, cada uma com atributos e métodos apropriados. A seguir, vamos aplicar os quatro pilares da POO: Abstração, Encapsulamento, Herança, e Polimorfismo.
 
 Criado a partir do fork https://github.com/cami-la/desafio-poo-dio
@@ -17,3 +18,6 @@ Polimorfismo permite que diferentes classes implementem métodos com o mesmo nom
 
 Criado a partir do fork https://github.com/cami-la/desafio-poo-dio
 
+=======
+Criar um modelo para o domínio de um Bootcamp usando os princípios da Programação Orientada a Objetos (POO) em Java. Este modelo incluirá as classes Bootcamp, Cursso, Mentoria, e Dev, cada uma com atributos e métodos apropriados. A seguir, vamos aplicar os quatro pilares da POO: Abstração, Encapsulamento, Herança, e Polimorfismo.
+>>>>>>> 512b3d7e0cdeb4ed6aa2b88b7a73828a2f497daf
