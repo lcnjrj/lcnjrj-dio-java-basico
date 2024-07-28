@@ -1,4 +1,3 @@
-// Main.java
 public class Main {
     public static void main(String[] args) {
         CartFacade cart = new CartFacade();

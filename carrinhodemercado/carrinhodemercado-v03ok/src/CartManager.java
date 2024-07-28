@@ -1,4 +1,4 @@
-// Singleton para gerenciar o carrinho
+// CartManager.java
 public class CartManager {
     private static CartManager instance;
     private int position = 0; // Posição do carrinho
@@ -25,7 +25,7 @@ public class CartManager {
     public int getPosition() {
         return position;
     }
-    
+
     public void printMessage() {
         if (position >= 10) { // Supondo que o ponto final é a posição 10
             System.out.println("Fila única máximo 15 itens");

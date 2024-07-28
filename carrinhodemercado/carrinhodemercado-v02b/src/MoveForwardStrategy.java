@@ -8,6 +8,8 @@ public class MoveForwardStrategy implements CartStrategy {
 
     @Override
     public void execute() {
+        // Mensagem indicando o movimento do carrinho
+        System.out.println("Carrinho indo " + steps + " passos para frente");
         CartManager.getInstance().moveForward(steps);
     }
 }

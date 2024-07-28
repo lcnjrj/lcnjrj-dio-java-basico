@@ -1,4 +1,3 @@
-// MoveForwardStrategy.java
 public class MoveForwardStrategy implements CartStrategy {
     private int steps;
 

@@ -5,7 +5,6 @@ public class CartFacade {
     private CartStrategy stopStrategy;
 
     public CartFacade() {
-        // Inicializa as estratégias com valores padrão
         this.moveForwardStrategy = new MoveForwardStrategy(1); // Default steps = 1
         this.turnLeftStrategy = new TurnLeftStrategy();
         this.stopStrategy = new StopStrategy();
