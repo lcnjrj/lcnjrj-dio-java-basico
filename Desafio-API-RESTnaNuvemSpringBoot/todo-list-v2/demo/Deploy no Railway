@@ -1,0 +1,13 @@
+ Deploy no Railway
+Criar uma Conta no Railway:
+
+Acesse Railway e crie uma conta, se ainda não tiver.
+Criar um Novo Projeto:
+
+Na dashboard do Railway, crie um novo projeto e escolha a opção para conectar com um repositório Git.
+Configurar o Projeto:
+
+Configure o Railway para usar o Maven e defina as variáveis de ambiente necessárias (se houver).
+Deploy:
+
+Conecte seu repositório Git ao Railway e inicie o deploy. Railway irá construir e hospedar sua aplicação Spring Boot automaticamente.
